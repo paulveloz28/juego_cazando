@@ -13,6 +13,9 @@ const altoGato = 50;
 const altoComida = 20;
 const anchoComida = 20;  
 
+// juego
+let puntos = 0;
+
 // -------------------
 // LIMPIAR
 
@@ -39,6 +42,14 @@ function iniciarJuego() {
     gatoX = (canvas.width / 2) - (anchoGato / 2);
     gatoY = (canvas.height / 2) - (altoGato / 2);
 
+    // comida aleatoria desde el inicio
+    comidaX = generarAleatorio(0,480);
+    comidaY = generarAleatorio(0,480);
+
+    puntos = 0;
+    mostrarEnSpan("puntos", puntos);
+
+    limpiarCanvas();
     graficarGato();
     graficarComida();
 }
@@ -48,30 +59,25 @@ function iniciarJuego() {
 
 function moverIzquierda(){
     gatoX -=10;
-    limpiarCanvas();
-    graficarGato();
-    graficarComida();
-    detectarColision();
+    actualizar();
 }
 
 function moverDerecha(){
     gatoX +=10;
-    limpiarCanvas();
-    graficarGato();
-    graficarComida();
-    detectarColision();
+    actualizar();
 }
 
 function moverArriba(){
     gatoY -=10;
-    limpiarCanvas();
-    graficarGato();
-    graficarComida();
-    detectarColision();
+    actualizar();
 }
 
 function moverAbajo(){
     gatoY +=10;
+    actualizar();
+}
+
+function actualizar(){
     limpiarCanvas();
     graficarGato();
     graficarComida();
@@ -79,7 +85,7 @@ function moverAbajo(){
 }
 
 // -------------------
-// COLISIÓN
+// COLISIÓN + PUNTOS
 
 function detectarColision(){
 
@@ -89,7 +95,13 @@ function detectarColision(){
         gatoY < comidaY + altoComida &&
         gatoY + altoGato > comidaY
     ){
-        alert("¡El gato comió la comida!");
+        // sumar puntos
+        puntos++;
+        mostrarEnSpan("puntos", puntos);
+
+        // mover comida a posición aleatoria
+        comidaX = generarAleatorio(0,480);
+        comidaY = generarAleatorio(0,480);
     }
 }
 
