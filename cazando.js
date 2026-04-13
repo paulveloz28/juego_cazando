@@ -1,11 +1,9 @@
 let canvas=document.getElementById("areaDeJuego");
 let ctx=canvas.getContext("2d");
 
-// posicion gato
+// posiciones
 let gatoX=0;
 let gatoY=0;
-
-// posicion comida
 let comidaX=0;
 let comidaY=0;
 
@@ -38,7 +36,6 @@ function graficarComida() {
 
 function iniciarJuego() {
 
-    // centrar gato solo una vez
     gatoX = (canvas.width / 2) - (anchoGato / 2);
     gatoY = (canvas.height / 2) - (altoGato / 2);
 
@@ -50,35 +47,50 @@ function iniciarJuego() {
 // MOVIMIENTOS
 
 function moverIzquierda(){
-    gatoX = gatoX - 10;
-
+    gatoX -=10;
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 function moverDerecha(){
-    gatoX = gatoX + 10;
-
+    gatoX +=10;
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 function moverArriba(){
-    gatoY = gatoY - 10;
-
+    gatoY -=10;
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 function moverAbajo(){
-    gatoY = gatoY + 10;
-
+    gatoY +=10;
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
+}
+
+// -------------------
+// COLISIÓN
+
+function detectarColision(){
+
+    if(
+        gatoX < comidaX + anchoComida &&
+        gatoX + anchoGato > comidaX &&
+        gatoY < comidaY + altoComida &&
+        gatoY + altoGato > comidaY
+    ){
+        alert("¡El gato comió la comida!");
+    }
 }
 
 // -------------------
