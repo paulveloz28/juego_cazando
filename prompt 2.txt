@@ -4,3 +4,6 @@ actúa como diseñador gráfico, mejora la parte visual de este ejercicio, modif
 Prompt 2
 mejora el estilo solo del botón reiniciar, cámbialo a color rojo.
 
+
+Prompt 3
+agregale una imagen background.
