@@ -1,0 +1,3 @@
+Prompt 1
+actúa como diseñador gráfico, mejora la parte visual de este ejercicio, modifica el html y el css, no cambies los ids de los componentes, mantén separados el css y el html.
+
