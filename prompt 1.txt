@@ -3,3 +3,6 @@ actúa como diseñador gráfico, mejora la parte visual de este ejercicio, modif
 
 Prompt 2
 aumenta de tamaño el texto by paul veloz.
+
+Prompts 3
+mejórale el apartado de tiempo y puntos, auméntale un poco el tamaño.
