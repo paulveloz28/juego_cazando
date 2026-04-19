@@ -172,3 +172,40 @@ canvas {
   50% { transform: translate(-50%, -50%) scale(1.1); }
   100% { transform: translate(-50%, -50%) scale(1); }
 }
+
+.btn-danger {
+  background: #ff4b2b; /* Rojo vibrante */
+  color: white;
+  padding: 18px 35px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* Sombra inferior para dar efecto de botón físico alto */
+  box-shadow: 
+    0 6px 0 #b91d1d, 
+    0 0 20px rgba(255, 75, 43, 0.4); 
+    
+  transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.btn-danger:hover {
+  background: #ff6046;
+  box-shadow: 
+    0 6px 0 #b91d1d, 
+    0 0 30px rgba(255, 75, 43, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Efecto al hacer clic (Simulación de pulsación física) */
+.btn-danger:active {
+  transform: translateY(4px); /* El botón baja */
+  box-shadow: 
+    0 2px 0 #b91d1d, 
+    0 0 10px rgba(255, 75, 43, 0.2);
+}

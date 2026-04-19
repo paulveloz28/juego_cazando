@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juego Cazando | Pro Edition</title>
+  <title>Juego Cazando | Arcade Pro</title>
   <link href="cazando.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -15,17 +15,21 @@
       <div class="author-container">
         <span class="author">By Paul Veloz</span>
       </div>
-
     </header>
 
     <div class="panel stats-bar">
-      <div class="stat-item">
-        <label>Puntos</label>
-        <span id="puntos">0</span>
+      <div class="stat-item points-container">
+        <label>SCORE</label>
+        <div class="digital-display">
+          <span id="puntos">0</span>
+        </div>
       </div>
-      <div class="stat-item">
-        <label>Tiempo</label>
-        <span id="tiempo">10</span>
+      
+      <div class="stat-item timer-container">
+        <label>TIME LEFT</label>
+        <div class="digital-display">
+          <span id="tiempo">10</span><small>s</small>
+        </div>
       </div>
     </div>
 
@@ -35,17 +39,20 @@
     </div>
 
     <div class="controls-section">
-      <div class="d-pad">
-        <button class="btn-control up" onclick="moverArriba()">▲</button>
-        <div class="horizontal-btns">
-          <button class="btn-control left" onclick="moverIzquierda()">◀</button>
-          <button class="btn-control down" onclick="moverAbajo()">▼</button>
-          <button class="btn-control right" onclick="moverDerecha()">▶</button>
+      <div class="joystick-container">
+        <div class="joystick-base">
+          <button class="btn-control up" onclick="moverArriba()">▲</button>
+          <div class="horizontal-btns">
+            <button class="btn-control left" onclick="moverIzquierda()">◀</button>
+            <button class="btn-control down" onclick="moverAbajo()">▼</button>
+            <button class="btn-control right" onclick="moverDerecha()">▶</button>
+          </div>
         </div>
+        <p class="label-joy">CONTROL ANALÓGICO</p>
       </div>
       
       <div class="action-zone">
-        <button id="btn-reiniciar" class="btn-primary" onclick="reiniciarJuego()">REINICIAR</button>
+        <button id="btn-reiniciar" class="btn-danger" onclick="reiniciarJuego()">REINICIAR</button>
       </div>
     </div>
   </div>
