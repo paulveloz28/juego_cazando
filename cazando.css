@@ -38,10 +38,18 @@ h1 {
   margin: 0;
 }
 
+.author-container {
+  margin-bottom: 25px; /* Espacio antes de las estadísticas */
+}
+
 .author {
-  font-size: 0.8rem;
-  opacity: 0.7;
-  margin-bottom: 20px;
+  font-size: 1.2rem; /* Tamaño aumentado (antes era 0.8rem) */
+  font-weight: 400;
+  letter-spacing: 2px; /* Espaciado entre letras para estilo moderno */
+  color: #ffffff;
+  opacity: 0.9; /* Más visible que antes */
+  text-transform: uppercase; /* Opcional: le da un toque de crédito de película */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 /* Panel de estadísticas */
