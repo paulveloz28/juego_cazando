@@ -1,4 +1,6 @@
 let canvas=document.getElementById("areaDeJuego");
+let imagenGato = new Image();
+imagenGato.src = "gato.jpg"; // asegúrate que esta ruta exista
 let ctx=canvas.getContext("2d");
 
 let gatoX=0;
@@ -20,7 +22,7 @@ function limpiarCanvas(){
 }
 
 function graficarGato() {
-    graficarRectangulo(gatoX, gatoY, anchoGato,altoGato, "#1900ff");
+    ctx.drawImage(imagenGato, gatoX, gatoY, anchoGato, altoGato);
 }
 
 function graficarComida() {
@@ -63,7 +65,7 @@ function restarTiempo(){
 
 function moverIzquierda(){
     gatoX -=10;
-    actualiza0();
+    actualizar();
 }
 
 function moverDerecha(){
