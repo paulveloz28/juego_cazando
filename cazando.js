@@ -12,7 +12,7 @@ const altoComida = 20;
 const anchoComida = 20;  
 
 let puntos = 0;
-let tiempo = 10;
+let tiempo = 15;//
 let intervalo;
 
 function limpiarCanvas(){
@@ -36,7 +36,7 @@ function iniciarJuego() {
     comidaY = generarAleatorio(0,480);
 
     puntos = 0;
-    tiempo = 10;
+    tiempo = 15;//
 
     mostrarEnSpan("puntos", puntos);
     mostrarEnSpan("tiempo", tiempo);
@@ -45,7 +45,7 @@ function iniciarJuego() {
     graficarGato();
     graficarComida();
 
-    intervalo = setInterval(restarTiempo,1000);
+    intervalo = setInterval(restarTiempo,1500);
 }
 
 // TIEMPO
@@ -53,7 +53,7 @@ function iniciarJuego() {
 function restarTiempo(){
     tiempo--;
     mostrarEnSpan("tiempo", tiempo);
-    if(tiempo == 0){
+    if(tiempo == -1){//
         alert("GAME OVER");
         clearInterval(intervalo);
     }
@@ -63,7 +63,7 @@ function restarTiempo(){
 
 function moverIzquierda(){
     gatoX -=10;
-    actualizar();
+    actualiza0();
 }
 
 function moverDerecha(){
@@ -108,6 +108,7 @@ function detectarColision(){
             clearInterval(intervalo);
         }
     }
+    tiempo=15;//
 }
 
 function reiniciarJuego(){
