@@ -1,7 +1,11 @@
 let canvas=document.getElementById("areaDeJuego");
+
 let imagenGato = new Image();
 imagenGato.src = "gato.jpg"; // asegúrate que esta ruta exista
 let ctx=canvas.getContext("2d");
+
+let imagenComida = new Image();
+imagenComida.src = "pescado.jpg"; // usa tu imagen aquí
 
 let gatoX=0;
 let gatoY=0;
@@ -10,8 +14,8 @@ let comidaY=0;
 
 const anchoGato = 80;
 const altoGato = 50;
-const altoComida = 20;
-const anchoComida = 20;  
+const altoComida = 40;
+const anchoComida = 40;  
 
 let puntos = 0;
 let tiempo = 15;//
@@ -26,7 +30,7 @@ function graficarGato() {
 }
 
 function graficarComida() {
-    graficarRectangulo(comidaX,comidaY,anchoComida, altoComida, "#FF0808");
+    ctx.drawImage(imagenComida, comidaX, comidaY, anchoComida, altoComida);
 }
 
 function iniciarJuego() {
